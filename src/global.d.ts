@@ -1,0 +1,2 @@
+type Sealed = { salt: string; iv: string; tag: string; data: string };
+interface Window { workdesk: { platform(): Promise<string>; captureSources(): Promise<{id:string;name:string;dataUrl:string}[]>; copyImage(url:string):Promise<boolean>; saveImage(url:string):Promise<string|false>; applyNetwork(profile:unknown):Promise<{ok:boolean;message:string}>; seal(plain:string,password:string,salt?:string):Promise<Sealed>; open(item:Sealed,password:string):Promise<string> } }
